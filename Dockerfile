@@ -1,4 +1,11 @@
-FROM ubuntu:latest
-LABEL authors="tatyana"
+FROM python:3.11
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install -r requirements.txt
+
+
+
+CMD ["flask", "--app", "/app/server.py", "run", "-h", "0.0.0.0", "-p", "8080"]
