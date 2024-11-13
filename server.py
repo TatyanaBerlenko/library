@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from db import books
+
 
 app = Flask(__name__)
 
