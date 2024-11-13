@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
@@ -14,5 +14,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Set up environment variables
+      run: echo "IMAGE_TAG=library:$(date +%s)" >> $GITHUB_ENV
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag library:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ env.IMAGE_TAG }}
+
+    - name: Run Docker container
+      run: docker run -d --name library ${{ env.IMAGE_TAG }}
+
+    - name: Execute client.py script in container
+      run: docker exec library python /app/client.py
+
+    - name: Stop and remove container
+      run: |
+        docker stop library
+        docker rm library
+
+
