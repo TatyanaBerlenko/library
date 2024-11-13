@@ -10,8 +10,7 @@ Describe the steps to set up the environment and run the application. This can b
 
 ```
 docker build -t library_image .
-docker run --name library -p 5000:5000 library_image
-
+docker run --name library -p 8080:8080 library_image
 ```
 
 ## Requirements
