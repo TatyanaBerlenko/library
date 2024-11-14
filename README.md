@@ -6,7 +6,7 @@ An application in which users can manage their bibliography: add, delete and edi
 
 ## Link
 
-[Welcome!](https://library-production-a9cd.up.railway.app/hello)
+[Welcome!](https://library-production-a9cd.up.railway.app/)
 
 ## Setup
 
