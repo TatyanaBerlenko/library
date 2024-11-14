@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello! Welcome to my library'
+    return render_template('main.html')
 
 
 @app.route('/books/<int:book_id>')
