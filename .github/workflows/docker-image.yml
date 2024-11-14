@@ -25,7 +25,7 @@ jobs:
       run: docker run -d --name library ${{ env.IMAGE_TAG }}
 
     - name: Execute client.py script in container
-      run: docker exec library python /app/client.py
+      run: docker exec library python app/client.py
 
     - name: Stop and remove container
       run: |
