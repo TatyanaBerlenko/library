@@ -37,3 +37,10 @@ def get_book_by_id(_id):
 
 def get_all_books():
     return books
+
+def add_new_book(new_book):
+    books.append(new_book)
+
+
+def get_next_id():
+    return max(book["id"] for book in books) + 1
