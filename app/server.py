@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    name = 'Tatiana'
+    name = 'Guest'
     return render_template('index.html', name=name)
 
 
@@ -26,4 +26,3 @@ def get_books():
 
 if __name__ == '__main__':
     app.run(port=8080)
-
