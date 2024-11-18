@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from books import get_book_by_id, get_all_books
 
 app = Flask(__name__)
@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello! Welcome to my library'
+    name = 'Tatiana'
+    return render_template('index.html', name=name)
 
 
 @app.route('/books/<int:book_id>')
@@ -19,7 +20,8 @@ def get_book(book_id):
 
 @app.route('/books')
 def get_books():
-    return jsonify(get_all_books())
+    books = get_all_books()
+    return render_template('books.html', books=books)
 
 
 if __name__ == '__main__':
