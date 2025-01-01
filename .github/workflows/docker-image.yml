@@ -25,7 +25,7 @@ jobs:
       run: docker run -d -p 8080:8080 --name library ${{ env.IMAGE_TAG }}
 
     - name: Execute client.py script in container
-      run: docker exec library python tests
+      run: docker exec library python tests/test_all_features.py
 
     - name: Stop and remove container
       run: |
