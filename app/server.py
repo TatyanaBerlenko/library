@@ -22,12 +22,14 @@ with app.app_context():
 @app.route('/')
 @app.route('/<name>')
 def home(name='Guest'):
+    logger.info(f'Visited home page by {name}')
     return render_template('index.html', name=name)
 
 
 @app.route('/books/<int:book_id>')
 def get_book(book_id):
     book = Book.query.get(book_id)
+    logger.info(f'Visited book: {book.title}')
     if book:
         return jsonify({
             'id': book.id,
@@ -39,12 +41,14 @@ def get_book(book_id):
 
 @app.route('/books')
 def get_books():
+    logger.info('Visited books page')
     books = Book.query.all()
     return render_template('books.html', books=books)
 
 
 @app.route('/books/add', methods=['GET', 'POST'])
 def add_book():
+    logger.info('Visited add book page')
     if request.method == 'POST':
         title = request.form['title']
         author = request.form['author']
@@ -61,6 +65,7 @@ def add_book():
 @app.route('/books/edit/<int:book_id>', methods=['GET', 'POST'])
 def edit_book(book_id):
     book = Book.query.get_or_404(book_id)
+    logger.info(f'Visited edit book page for {book.title}')
     if request.method == 'POST':
         book.title = request.form['title']
         book.author = request.form['author']
@@ -73,6 +78,7 @@ def edit_book(book_id):
 @app.route('/books/delete/<int:book_id>', methods=['POST'])
 def delete_book(book_id):
     book = Book.query.get_or_404(book_id)
+    logger.info(f'Visited delete book page for {book.title}')
     db.session.delete(book)
     db.session.commit()
     logger.info(f'Deleted book: {book.title}')
