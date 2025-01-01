@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Edit Book{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Edit Book</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ book.title }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="author" value="{{ book.author }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Save Changes</button>
+        <a href="/books" class="btn btn-outline-secondary ms-2">Back to Books</a>
+    </form>
+</div>
+{% endblock %}

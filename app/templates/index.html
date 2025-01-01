@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Main Page {% endblock %}
+{% block title %}Main Page{% endblock %}
 
-  {% block content %}
-<h2>Hello, {{name}}! Welcome to my library app!</h2>
-  {% endblock %}
+{% block content %}
+<h2>Hello, {{ name }}! Welcome to my library app!</h2>
+<a href="/books/add">
+    <a href="/books/add" class="btn btn-outline-primary mt-3">Add a new book</a>
+</a>
+{% endblock %}
