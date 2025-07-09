@@ -1,5 +1,7 @@
 # Library project
 
+_This repository containes examples of the code for student 1st year NUP JB program_
+
 ## Description
 
 An application in which users can manage their bibliography: add, delete and edit books.
