@@ -1,6 +1,6 @@
 # Library project
 
-_This repository containes examples of the code for student 1st year NUP JB program_
+_This repository containes examples of the code for students 1st year NUP JB program_
 
 ## Description
 
