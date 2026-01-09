@@ -2,9 +2,8 @@ import uuid
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from logger import setup_logging
+import logger
 
-setup_logging()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
@@ -93,5 +92,5 @@ def delete_book(book_id):
 
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=8081)
 
