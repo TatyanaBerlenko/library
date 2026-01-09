@@ -1,12 +1,14 @@
 # Library project
 
+_This repository containes examples of the code for students 1st year NUP JB program_
+
 ## Description
 
 An application in which users can manage their bibliography: add, delete and edit books.
 
 ## Link
 
-[Welcome!](https://library-production-a9cd.up.railway.app/)
+[Welcome!]([https://library-production-a9cd.up.railway.app/](https://library-5e1z.onrender.com/))
 
 ## Setup
 
